@@ -4,6 +4,7 @@ import (
 	"net/http"
 	"log"
 	"fmt"
+	"time"
 )
 
 func serveHello(w http.ResponseWriter, r *http.Request) {
@@ -11,7 +12,7 @@ func serveHello(w http.ResponseWriter, r *http.Request) {
 }
 
 func serveTime(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Time")
+	fmt.Fprint(w, time.Now().Format(time.Kitchen))
 }
 
 func serveHealth(w http.ResponseWriter, r *http.Request) {
